@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo示意</title>
+    <style>
+        button {
+            width: 150px; height: 40px; font-size: 18px; font-family: system-ui;;
+        }
+    </style>
+</head>
+<body>
+<h4>基本图形SVG</h4>
+<svg width="100" height="100"><circle cx="50" cy="50" r="40"></circle></svg>
+<svg width="100" height="100"><ellipse cx="50" cy="50" rx="40" ry="20"></ellipse></svg>
+<svg width="300" height="150">
+    <polyline points="10,10,100,100" stroke="#000000" stroke-width="5"></polyline>
+    <polyline points="110,10,200,100" stroke="#000000" stroke-width="5"></polyline>
+</svg>
+<svg width="150" height="120"><rect x="10" y="20" width="120" height="90" rx="10" ry="10"></rect></svg>
+<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 12L18 6H30L33 12H15Z" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="4" y="12" width="40" height="30" rx="3" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M24 35C28.4183 35 32 31.4183 32 27C32 22.5817 28.4183 19 24 19C19.5817 19 16 22.5817 16 27C16 31.4183 19.5817 35 24 35Z" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 12L18 6H30L33 12H15Z" fill="#333" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="4" y="12" width="40" height="30" rx="3" fill="#333" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M24 35C28.4183 35 32 31.4183 32 27C32 22.5817 28.4183 19 24 19C19.5817 19 16 22.5817 16 27C16 31.4183 19.5817 35 24 35Z" fill="#FFF" stroke="#FFF" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+
+<p>
+    <button id="convert">转换</button>
+</p>
+
+<div id="result" hidden>
+    <h4>以下是转换结果：</h4>
+</div>
+
+<script src="./svg2path.js"></script>
+<script>
+convert.onclick = function () {
+    this.disabled = true;
+
+    [].slice.call(document.querySelectorAll('body > svg')).forEach(function (svg) {
+        var svgNew = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgNew.setAttribute('width', svg.getAttribute('width'));
+        svgNew.setAttribute('height', svg.getAttribute('height'));
+        svgNew.setAttribute('viewBox', svg.getAttribute('viewBox'));
+        svgNew.setAttribute('fill', svg.getAttribute('fill'));
+        svgNew.setAttribute('xmlns', svg.getAttribute('xmlns'));
+
+        result.appendChild(svgNew);
+        // 转换为路径
+        [].slice.call(svg.childNodes).forEach(function (node) {
+            var path = svg2path(node);
+            if (path) {
+                var svgPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                svgPath.setAttribute('d', path);
+                svgNew.appendChild(svgPath);
+
+                var fill = node.getAttribute('fill');
+                var stroke = node.getAttribute('stroke');
+                var strokeWidth = node.getAttribute('stroke-width');
+
+                if (fill) {
+                    svgPath.setAttribute('fill', fill);
+                }
+                if (stroke) {
+                    svgPath.setAttribute('stroke', stroke);
+                }
+                if (strokeWidth) {
+                    svgPath.setAttribute('stroke-width', strokeWidth);
+                }
+            }
+        });
+    });
+
+    result.removeAttribute('hidden');
+};
+</script>
+
+</body>
+</html>

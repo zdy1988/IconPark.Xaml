@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>favicon.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>ByteDance IconPark</Title>
+		<Version>1.3.0</Version>
+		<Authors>ZDY</Authors>
+		<Description>诞生于我（ZDY）的个人兴趣，我会在有限的时间里维护这个软件。如果在使用的过程中发现什么BUG，欢迎发送描述信息和图片到我的邮箱，也可以在我的GitHub上留言，我会尽力改进软件...</Description>
+		<Product>ByteDance IconPark</Product>
+		<PackageIcon>favicon.ico</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="favicon.ico" />
+		<None Remove="Resources\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="VirtualizingWrapPanel" Version="1.5.7" />
+		<PackageReference Include="Zhai.Famil" Version="1.6.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IconPark.Xaml\IconPark.Xaml.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="favicon.ico" />
+		<Resource Include="Resources\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+</Project>
