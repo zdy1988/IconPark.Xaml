@@ -55,3 +55,5 @@ xmlns:IconPark="https://iconpark.oceanengine.com"
 ### 感谢
 
 [IconPark](https://github.com/bytedance/iconpark)
+
+[Svg2Path](https://www.zhangxinxu.com/wordpress/2021/08/svg-shape-to-path/)
