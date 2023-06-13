@@ -21,7 +21,7 @@ namespace IconPark.Xaml.IconsView
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : GlassesWindow
+    public partial class MainWindow : FamilWindow
     {
         MainWindowViewModel ViewModel => this.DataContext as MainWindowViewModel;
 
@@ -83,6 +83,7 @@ namespace IconPark.Xaml.IconsView
         {
             var window = new AboutWindow
             {
+                Theme = this.Theme,
                 Owner = App.Current.MainWindow
             };
 

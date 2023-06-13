@@ -132,7 +132,7 @@ namespace IconPark.Xaml.IconsView
 
         public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopyXAMLCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
         {
-            Clipboard.SetText($"<IconPark:Icon x:Name=\"PART_Icon\" Kind=\"{item.Key}\"/>");
+            Clipboard.SetText($"<IconPark:Icon Kind=\"{item.Key}\"/>");
 
         })).Value;
 
@@ -140,7 +140,7 @@ namespace IconPark.Xaml.IconsView
         {
             var opts = Options.Resolve(this, true);
 
-            Clipboard.SetText($"<IconPark:Icon x:Name=\"PART_Icon\" Kind=\"{item.Key}\" Foreground=\"{opts.Color}\" StrokeThickness=\"{opts.StrokeWidth}\" StrokeLineJoin=\"{opts.StrokeLineJoin}\" StrokeLineCap=\"{opts.StrokeLineCap}\"/>");
+            Clipboard.SetText($"<IconPark:Icon Kind=\"{item.Key}\" Foreground=\"{opts.Color}\" StrokeThickness=\"{opts.StrokeWidth}\" StrokeLineJoin=\"{opts.StrokeLineJoin}\" StrokeLineCap=\"{opts.StrokeLineCap}\"/>");
 
         })).Value;
 
