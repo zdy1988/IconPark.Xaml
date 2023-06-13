@@ -38,18 +38,32 @@ namespace IconPark.Xaml.IconsView
         {
             var scrollViewer = this.IconsListBox.GetGrandChild<ScrollViewer>();
 
-            scrollViewer.ScrollChanged += ScrollViewer_ScrollChanged;
+            if (scrollViewer != null)
+            {
+                scrollViewer.ScrollChanged += ScrollViewer_ScrollChanged;
+            }
         }
 
         private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            if (e.VerticalOffset > 100 && Drawer.IsTopDrawerOpen)
+            if (!ViewModel.IsOptionsPaneShow)
             {
-                Drawer.IsTopDrawerOpen = false;
-            }
-            else if (e.VerticalOffset < 10 && !Drawer.IsTopDrawerOpen)
-            {
-                Drawer.IsTopDrawerOpen = true;
+                if (sender is ScrollViewer scrollViewer && scrollViewer.ScrollableHeight > this.ActualHeight)
+                {
+                    if (e.VerticalOffset > 100 && Drawer.IsTopDrawerOpen)
+                    {
+                        ViewModel.IsBannerPaneShow = false;
+                    }
+                    else if (e.VerticalOffset < 10 && !Drawer.IsTopDrawerOpen)
+                    {
+                        ViewModel.IsBannerPaneShow = true;
+                    }
+                }
+                else
+                {
+                    ViewModel.IsOptionsPaneShow = true;
+                    ViewModel.IsBannerPaneShow = false;
+                }
             }
         }
 
@@ -73,6 +87,16 @@ namespace IconPark.Xaml.IconsView
             };
 
             window.ShowDialog();
+        }
+
+        private void ArrowUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            var scrollViewer = this.IconsListBox.GetGrandChild<ScrollViewer>();
+
+            if (scrollViewer != null)
+            {
+                scrollViewer.ScrollToTop();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace IconPark.Xaml.IconsView
+namespace IconPark.Xaml.IconsView.Converters
 {
     internal class ListBoxItemTemplateConverter : IValueConverter
     {

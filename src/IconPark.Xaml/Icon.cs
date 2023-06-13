@@ -39,7 +39,7 @@ namespace IconPark.Xaml
             set => SetValue(StrokeLineJoinProperty, value);
         }
 
-        public static readonly DependencyProperty StrokeLineCapProperty = DependencyProperty.Register(nameof(StrokeLineCap), typeof(PenLineCap), typeof(Icon), new PropertyMetadata(PenLineCap.Flat));
+        public static readonly DependencyProperty StrokeLineCapProperty = DependencyProperty.Register(nameof(StrokeLineCap), typeof(PenLineCap), typeof(Icon), new PropertyMetadata(PenLineCap.Round));
         public PenLineCap StrokeLineCap
         {
             get => (PenLineCap)GetValue(StrokeLineCapProperty);
