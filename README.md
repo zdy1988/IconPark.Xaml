@@ -54,7 +54,7 @@ xmlns:IconPark="https://iconpark.oceanengine.com"
 
 #### 关于未实现的图标
 
-此库主要关于线性图标，有一些图标的svg代码过于复杂而未转化成功是我能力不如，至少先将这些图标移除，待日后找到解决方案再添加，具体有多少图标被移除，请看[未实现的图标](./tool/IconDataFactoryGenerator/unrealized.md)
+此库主要关注于线性图标，有一些图标的svg代码过于复杂而未转化成功是我能力不足，目前只能先将这些图标移除，待日后找到解决方案后再添加，具体有多少图标被移除，请看[未实现的图标](./tool/IconDataFactoryGenerator/unrealized.md)
 
 ### 感谢
 

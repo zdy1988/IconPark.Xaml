@@ -25,7 +25,6 @@
                                   StrokeThickness="{TemplateBinding StrokeThickness}"
                                   StrokeLineJoin="{TemplateBinding StrokeLineJoin}"
                                   StrokeStartLineCap="{TemplateBinding StrokeLineCap}"
-                                  StrokeDashCap="{TemplateBinding StrokeLineCap}"
                                   StrokeEndLineCap="{TemplateBinding StrokeLineCap}"
                                   VerticalAlignment="Center"
                                   HorizontalAlignment="Center"
