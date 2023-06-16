@@ -18,12 +18,13 @@ for (var i = 0; i < data.length; i++) {
   var svgPath = getSvgPath(item.svg);
   var title = item.title;
   var name = convertToHumpName(`-${item.name}`);
+  var category = `${item.category}|${item.categoryCN}`;
 
   if (svgPath == "" || svgPath.indexOf("null") != -1) {
     UnrealizedFile.writeItem(name, svgPath);
   } else {
     IconDataFactoryFile.writeItem(name, svgPath);
-    IconKindFile.writeItem(name, title);
+    IconKindFile.writeItem(name, title, category);
   }
 
   console.log(`${item.id}.${item.name}`);

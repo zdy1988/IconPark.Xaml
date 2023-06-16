@@ -23,7 +23,7 @@
     <ZDY:GlassesWindow.TitleBarContent>
         <DockPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                <ZDY:IconButton x:Name="AboutButton" Icon="About" ToolTip="关于" Click="AboutButton_Click"/>
+                <ZDY:IconButton x:Name="AboutButton" Icon="NotebookOne" ToolTip="关于" Click="AboutButton_Click"/>
             </StackPanel>
             <StackPanel>
 
@@ -34,7 +34,7 @@
         <DataTemplate x:Key="NormalTemplate">
             <Border Width="224" CornerRadius="4" Background="{StaticResource Zhai.Famil.SelectionActivedBrush}">
                 <DockPanel>
-                    <Border Width="64" Height="64" DockPanel.Dock="Left" Background="Transparent" ToolTip="{Binding Value}">
+                    <Border Width="64" Height="64" DockPanel.Dock="Left" Background="Transparent" ToolTip="{Binding Value.Description}">
                         <IconPark:Icon x:Name="PART_Icon" Kind="{Binding Key}" VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Width="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.IconSize}"
                                        Height="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.IconSize}"
@@ -52,7 +52,7 @@
                         </IconPark:Icon>
                     </Border>
                     <Grid DockPanel.Dock="Right" x:Name="MoreButtonContainer" Background="Transparent">
-                        <ZDY:IconButton x:Name="MoreButton" Icon="VuesaxOutlineMoreSquare" Margin="10" Opacity="0.8"/>
+                        <ZDY:IconButton x:Name="MoreButton" Icon="More2" Margin="10" Opacity="0.8"/>
                         <Popup x:Name="PART_Popup" StaysOpen="True"
                                AllowsTransparency="True"
                                Focusable="False" VerticalOffset="-15"
@@ -77,6 +77,7 @@
                                                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                                             </Style>
                                         </StackPanel.Resources>
+                                        <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Separator/>
@@ -89,7 +90,7 @@
                         </Popup>
                     </Grid>
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="{Binding Value}"/>
+                        <TextBlock Text="{Binding Value.Description}"/>
                         <TextBlock Text="{Binding Key}" FontSize="11" Margin="0 8 0 0" Opacity="0.8" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
                     </StackPanel>
                 </DockPanel>
@@ -104,7 +105,7 @@
         <DataTemplate x:Key="SimpleTemplate">
             <Border Width="64" CornerRadius="4" Background="{StaticResource Zhai.Famil.SelectionActivedBrush}">
                 <Grid x:Name="MoreButtonContainer" Background="Transparent">
-                    <Border Width="64" Height="64" DockPanel.Dock="Left" Background="Transparent" ToolTip="{Binding Value}">
+                    <Border Width="64" Height="64" DockPanel.Dock="Left" Background="Transparent" ToolTip="{Binding Value.Description}">
                         <IconPark:Icon x:Name="PART_Icon" Kind="{Binding Key}" VerticalAlignment="Center" HorizontalAlignment="Center"
                                        Width="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.IconSize}"
                                        Height="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.IconSize}"
@@ -145,6 +146,7 @@
                                             <Setter Property="HorizontalContentAlignment" Value="Left"/>
                                         </Style>
                                     </StackPanel.Resources>
+                                    <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Separator/>
@@ -257,9 +259,13 @@
                      KeyDown="SearchIconTextBox_KeyDown"/>
             </DockPanel>
 
-            <ZDY:ListBox x:Name="IconsListBox" Grid.Row="1" ItemsSource="{Binding Icons}" SelectionMode="Multiple" Margin="-7" 
+            <ZDY:ListBox x:Name="IconsListBox" Grid.Row="1" ItemsSource="{Binding IconCollectionView}" SelectionMode="Multiple" Margin="-7" 
                          ZDY:ScrollViewerExtension.IsAutoHideEnabled="False"
+                         ScrollViewer.CanContentScroll="True"
                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         VirtualizingPanel.CacheLengthUnit="Page"
+                         VirtualizingPanel.CacheLength="1"
+                         VirtualizingPanel.IsVirtualizingWhenGrouping="True"
                          ItemTemplate="{Binding ElementName=ListBoxItemTemplateSwitchButton, Path=IsChecked, Converter={StaticResource ListBoxItemTemplateConverter}}">
                 <ZDY:ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
@@ -291,11 +297,27 @@
                         <wpftk:VirtualizingWrapPanel Orientation="Vertical" SpacingMode="StartAndEndOnly" StretchItems="False" Margin="0 0 0 20"/>
                     </ItemsPanelTemplate>
                 </ZDY:ListBox.ItemsPanel>
+                <ZDY:ListBox.GroupStyle>
+                    <GroupStyle HidesIfEmpty="True">
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Border HorizontalAlignment="Center" Margin="0 24" Padding="0 0 0 4" BorderBrush="{StaticResource IconPark.Xaml.ColorBrush}" BorderThickness="0 0 0 2">
+                                    <TextBlock Style="{StaticResource Zhai.Famil.SubtitleTextBlockStyle}"  Text="{Binding Name, Converter={Converters:IconGroupNameConverter}}"/>
+                                </Border>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                    </GroupStyle>
+                </ZDY:ListBox.GroupStyle>
             </ZDY:ListBox>
 
             <StackPanel Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 0 20">
-                <ZDY:IconToggleButton x:Name="OptionsButton" Icon="List" CheckedIcon="Close2" Background="Black" Foreground="White" IsChecked="{Binding IsOptionsPaneShow}" Margin="0 0 0 8"/>
-                <ZDY:IconButton x:Name="ArrowUpButton" Icon="ArrowUp1" Background="Black" Foreground="White" Click="ArrowUpButton_Click"/>
+                <ZDY:IconToggleButton x:Name="OptionsButton" Icon="MindmapList" CheckedIcon="Close" Background="Black" Foreground="White" IsChecked="{Binding IsOptionsPaneShow}" Margin="0 0 0 8"/>
+                <ZDY:IconButton x:Name="ArrowUpButton" Icon="Up" Background="Black" Foreground="White" Click="ArrowUpButton_Click"/>
             </StackPanel>
         </Grid>
     </ZDY:Drawer>

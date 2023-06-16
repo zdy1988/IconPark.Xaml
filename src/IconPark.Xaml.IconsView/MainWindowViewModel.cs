@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -7,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Ink;
 using System.Windows.Media;
 using Zhai.Famil.Common.ExtensionMethods;
@@ -17,10 +20,10 @@ namespace IconPark.Xaml.IconsView
 {
     internal class MainWindowViewModel : ViewModelBase
     {
-        public Dictionary<IconKind, string> IconKinds => EnumExtensions.CreateEnumSource<IconKind>();
+        public Dictionary<IconKind, EnumSourceItem> IconKinds => EnumExtensions.CreateEnumSources<IconKind>();
 
-        private Dictionary<IconKind, string> icons;
-        public Dictionary<IconKind, string> Icons
+        private Dictionary<IconKind, EnumSourceItem> icons;
+        public Dictionary<IconKind, EnumSourceItem> Icons
         {
             get => icons;
             set => Set(() => Icons, ref icons, value);
@@ -33,27 +36,30 @@ namespace IconPark.Xaml.IconsView
             set => Set(() => IconKeyword, ref iconKeyword, value);
         }
 
+        public ICollectionView IconCollectionView { get; }
+
         public MainWindowViewModel()
         {
             Icons = IconKinds;
+
+            IconCollectionView = CollectionViewSource.GetDefaultView(Icons);
+            IconCollectionView.GroupDescriptions.Add(new PropertyGroupDescription("Value.Category"));
         }
 
-        public async void SearchIcon()
+
+        public void SearchIcon()
         {
-            if (string.IsNullOrWhiteSpace(IconKeyword))
+            IconCollectionView.Filter = o =>
             {
-                Icons = IconKinds;
-            }
-            else
-            {
-                Icons = await Task.Run(() => {
+                if (o is KeyValuePair<IconKind, EnumSourceItem> x)
+                {
+                    return x.Key.ToString().Contains(IconKeyword, StringComparison.CurrentCultureIgnoreCase) || x.Value.Description.Contains(IconKeyword, StringComparison.CurrentCultureIgnoreCase);
+                }
 
-                    var list = IconKinds
-                         .Where(x => x.Key.ToString().IndexOf(IconKeyword, StringComparison.CurrentCultureIgnoreCase) >= 0 || x.Value.IndexOf(IconKeyword, StringComparison.CurrentCultureIgnoreCase) >= 0);
+                return false;
+            };
 
-                    return new Dictionary<IconKind, string>(list);
-                });
-            }
+            IconCollectionView.Refresh();
         }
 
         #region Options
@@ -130,13 +136,19 @@ namespace IconPark.Xaml.IconsView
 
         })).Value;
 
-        public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopyXAMLCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyKindCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
+        {
+            Clipboard.SetText(item.Key.ToString());
+
+        })).Value;
+
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyXAMLCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             Clipboard.SetText($"<IconPark:Icon Kind=\"{item.Key}\"/>");
 
         })).Value;
 
-        public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopyXAMLWithOptionsCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyXAMLWithOptionsCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             var opts = Options.Resolve(this, true);
 
@@ -144,7 +156,7 @@ namespace IconPark.Xaml.IconsView
 
         })).Value;
 
-        public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopySVGCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopySVGCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             var data = Icon.GetData(item.Key);
 
@@ -159,7 +171,7 @@ namespace IconPark.Xaml.IconsView
 
         })).Value;
 
-        public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopyReactCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyReactCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             var opts = Options.Resolve(this);
 
@@ -167,7 +179,7 @@ namespace IconPark.Xaml.IconsView
 
         })).Value;
 
-        public RelayCommand<KeyValuePair<IconKind, string>> ExecuteCopyVueCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, string>>>(() => new RelayCommand<KeyValuePair<IconKind, string>>(item =>
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyVueCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             string key = Regex.Replace(item.Key.ToString(), "[A-Z]", delegate (Match m)
             {

@@ -18,8 +18,8 @@ function writeHeader() {
   fs.appendFileSync(iconKindFile, "    {" + os.EOL, fsOpt);
 }
 
-function writeItem(name, title) {
-  fs.appendFileSync(iconKindFile, `        [Description("${title}")] ${name},` + os.EOL, fsOpt);
+function writeItem(name, title, category) {
+  fs.appendFileSync(iconKindFile, `        [Category("${category}")] [Description("${title}")] ${name},` + os.EOL, fsOpt);
 }
 
 function writeFooter() {

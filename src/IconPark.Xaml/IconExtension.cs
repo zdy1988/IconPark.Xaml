@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Markup;
+using System.Windows.Media;
 
 namespace IconPark.Xaml
 {
@@ -28,6 +29,15 @@ namespace IconPark.Xaml
         [ConstructorArgument("size")]
         public double? Size { get; set; }
 
+        [ConstructorArgument("strokeThickness")]
+        public double? StrokeThickness { get; set; }
+
+        [ConstructorArgument("strokeLineJoin")]
+        public PenLineJoin? StrokeLineJoin { get; set; }
+
+        [ConstructorArgument("strokeLineCap")]
+        public PenLineCap? StrokeLineCap { get; set; }
+
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var result = new Icon { Kind = Kind };
@@ -36,6 +46,21 @@ namespace IconPark.Xaml
             {
                 result.Height = Size.Value;
                 result.Width = Size.Value;
+            }
+
+            if (StrokeThickness.HasValue)
+            {
+                result.StrokeThickness = StrokeThickness.Value;
+            }
+
+            if (StrokeLineJoin.HasValue)
+            {
+                result.StrokeLineJoin = StrokeLineJoin.Value;
+            }
+
+            if (StrokeLineCap.HasValue)
+            {
+                result.StrokeLineCap = StrokeLineCap.Value;
             }
 
             return result;
