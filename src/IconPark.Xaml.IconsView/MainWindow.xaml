@@ -244,7 +244,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <DockPanel Grid.Row="0" Margin="0 24 0 24">
+            <DockPanel Grid.Row="0" Margin="4 24 4 24">
                 <ZDY:SwitchButton x:Name="ListBoxItemTemplateSwitchButton" DockPanel.Dock="Right" Size="48" Margin="24 0 0 0" Foreground="{StaticResource IconPark.Xaml.ColorBrush}">
                     <Grid>
                         <IconPark:Icon x:Name="CheckedIcon" Width="13" Height="13" Kind="ViewGridCard" Foreground="#fff" Visibility="{Binding RelativeSource={RelativeSource AncestorType=ZDY:SwitchButton}, Path=IsChecked, Converter={ZDY:BoolToVisibilityConverter}}"/>
