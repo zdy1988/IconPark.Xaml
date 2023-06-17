@@ -1,32 +1,25 @@
 const fs = require("fs");
 var os = require("os");
 
-const { findSvgFileSync, makeSvgPath, convertToHumpName } = require("./tools.js");
+const { getSvgPath, convertToHumpName } = require("./tools.js");
 
-const IconDataFactoryFile = require("./icon-data-factory.js");
-const IconKindFile = require("./icon-kind.js");
+const IconKindFile = require("./icon-kind-file.js");
 
-const svgDir = `.//source`;
+const data = require("./icons.json");
 
-IconDataFactoryFile.writeHeader();
 IconKindFile.writeHeader();
 
-let i = 1;
+for (var i = 0; i < data.length; i++) {
+  var item = data[i];
+  var title = item.title;
+  var name = convertToHumpName(`-${item.name}`);
+  var category = `${item.category}|${item.categoryCN}`;
 
-findSvgFileSync(svgDir, function (filePath, filename, dirent) {
-  console.log(`${i}.${filename}`);
-  var svgPath = makeSvgPath(filePath);
-  var names = filename.split("_");
-  var title = names[0];
-  var name = convertToHumpName(`-${names[1]}`);
+  IconKindFile.writeItem(name, title, category);
 
-  IconDataFactoryFile.writeItem(name, svgPath);
-  IconKindFile.writeItem(name, title);
+  console.log(`${item.id}.${item.name}`);
+}
 
-  i++;
-});
-
-IconDataFactoryFile.writeFooter();
 IconKindFile.writeFooter();
 
 console.log("write over！");
