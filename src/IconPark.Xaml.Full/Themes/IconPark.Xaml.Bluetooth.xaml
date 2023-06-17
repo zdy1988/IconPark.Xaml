@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Bluetooth" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{x:Null}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M23.5238094329834,24L34,34 23,44 23,24.5 23.5238094329834,24z M12,13L23,23.5 23,24.5 12,35 12,13z M23,4L34,14 23.5238094329834,24 23,23.5 23,4z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

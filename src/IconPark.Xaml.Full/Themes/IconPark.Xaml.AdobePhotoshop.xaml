@@ -1,0 +1,54 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.AdobePhotoshop" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M39,6L9,6C7.34315,6,6,7.34315,6,9L6,39C6,40.6569,7.34315,42,9,42L39,42C40.6569,42,42,40.6569,42,39L42,9C42,7.34315,40.6569,6,39,6z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M14,15L14,33" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M16,25C19,25 23,24.2 23,20 23,15.8 19,15 16,15L14,15 14,25 16,25z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M34,21.0246C33,21.0246 28,20.5266 28,24.0123 28,27.4979 34,26.5021 34,29.9877 34,33.4734 28,32.9754 28,32.9754" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

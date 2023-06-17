@@ -1,0 +1,70 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Click" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M24,4L24,12" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M22,22L42,26 36,30 42,36 36,42 30,36 26,42 22,22z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M38.1421,9.85789L32.4853,15.5147" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M9.85787,38.1421L15.5147,32.4853" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M4,24L12,24" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M9.85795,9.85787L15.5148,15.5147" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

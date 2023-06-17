@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Trapezoid" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M16.20560073852539,8L31.79439926147461,8C33.10660171508789,8,34.26649856567383,8.852749824523926,34.657901763916016,10.105199813842773L42.782901763916016,36.105201721191406C43.386600494384766,38.0369987487793,41.94329833984375,40,39.91939926147461,40L8.080570220947266,40C6.056650161743164,40,4.613450050354004,38.0369987487793,5.217130184173584,36.105201721191406L13.342100143432617,10.105199813842773C13.733499526977539,8.852749824523926,14.893400192260742,8,16.20560073852539,8z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

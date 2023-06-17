@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.0;netcoreapp3.1;net5.0-windows;net6.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>Resources\iconpark.ico</ApplicationIcon>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>IconPark.Xaml.Full</Title>
+		<Version>1.3.1</Version>
+		<Copyright>Apache License</Copyright>
+		<Description>IconPark提供了超过2000个高质量图标，并且提供了一个界面来帮你定制图标。我非常喜欢这套图标，于是我开发了适用于WPF的版本，目前只支持线性图标，但也已满足了我的需求，至于原IconPark图标所含有的主题切换技术，这个库还没有实现，甚至还有十几个图标未转换成功而不能使用。如果您也喜欢这套图标而懒于自己实现，可以在您的项目中试试IconPark.Xaml.</Description>
+		<PackageProjectUrl>https://github.com/zdy1988/IconPark.Xaml</PackageProjectUrl>
+		<PackageIcon>iconpark.png</PackageIcon>
+		<Authors>zdy1988</Authors>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>IconPark.Xaml.Full.snk</AssemblyOriginatorKeyFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageTags>ByteDance;IconPark;Icon;Wpf;Xaml;ZHAI;ZDY</PackageTags>
+		<RepositoryUrl>https://github.com/zdy1988/IconPark.Xaml</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\iconpark.ico" />
+		<None Remove="Resources\iconpark.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\iconpark.ico" />
+		<Resource Include="Resources\iconpark.png" >
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>

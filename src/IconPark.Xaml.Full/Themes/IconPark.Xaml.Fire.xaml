@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Fire" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M19.185300827026367,4C21.163400650024414,5.615920066833496 24.53700065612793,8 27.01759910583496,11.633899688720703 29.54450035095215,15.33590030670166 31.21109962463379,21.523099899291992 31.21109962463379,22.082599639892578 31.910999298095703,21.5447998046875 34.66600036621094,19.745399475097656 35.18090057373047,15.427900314331055 36.38610076904297,17.54360008239746 36.615699768066406,17.98579978942871 37.75550079345703,21.41160011291504 38.895301818847656,24.837499618530273 38.99980163574219,27.041799545288086 38.99980163574219,29.098100662231445 38.99980163574219,37.47420120239258 32.23469924926758,44 24,44 15.765299797058105,44 9,37.7942008972168 9,29.418100357055664 9,27.361799240112305 9.235960006713867,24.565000534057617 10.527400016784668,22.465099334716797 11.818900108337402,20.365299224853516 12.527799606323242,19.830799102783203 14.072199821472168,18.100200653076172 15.616700172424316,16.369600296020508 15.848899841308594,16.284900665283203 17.085399627685547,13.959400177001953 18.3218994140625,11.633899688720703 19.185300827026367,7.069769859313965 19.185300827026367,4z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

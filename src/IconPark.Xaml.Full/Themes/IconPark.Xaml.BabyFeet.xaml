@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.BabyFeet" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M15.0001,20.6121C13.5764,26.7616 21.4929,28.327 19.6238,32.6597 17.7546,36.9923 13.5688,36.1258 14.0361,40.4584 14.5035,44.791 20.0419,44.8519 25.0837,42.2415 35.1675,37.0205 37.2708,25.6166 32.7075,20.6122 27.1002,14.4626 16.4237,14.4626 15.0001,20.6121z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Opacity="1" Transform="0.766044443118978,0.6427876096865393,-0.6427876096865393,0.766044443118978,16.78013615126003,-19.03224517096113" />
+          </GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="2" RadiusY="3" Center="34.5354,13.5354" Transform="0.766044443118978,0.6427876096865393,-0.6427876096865393,0.766044443118978,16.78013615126003,-19.03224517096113" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Opacity="1" Transform="0.9063077870366499,0.42261826174069944,-0.42261826174069944,0.9063077870366499,7.233848754301285,-11.423383090231974" />
+          </GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="2" RadiusY="3" Center="29.3807,10.6032" Transform="0.9063077870366499,0.42261826174069944,-0.42261826174069944,0.9063077870366499,7.233848754301285,-11.423383090231974" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Opacity="1" Transform="0.9945218953682733,0.10452846326765347,-0.10452846326765347,0.9945218953682733,1.131844661839441,-2.391322701833918" />
+          </GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="2" RadiusY="3" Center="23.3805,9.6028" Transform="0.9945218953682733,0.10452846326765347,-0.10452846326765347,0.9945218953682733,1.131844661839441,-2.391322701833918" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}" Opacity="1" Transform="0.9396926207859084,-0.3420201433256687,0.3420201433256687,0.9396926207859084,-1.8919751156633957,5.270655923369069" />
+          </GeometryDrawing.Brush>
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="3" RadiusY="4" Center="13.9997,8.0003" Transform="0.9396926207859084,-0.3420201433256687,0.3420201433256687,0.9396926207859084,-1.8919751156633957,5.270655923369069" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Opacity="1" Transform="0.6427876096865394,0.766044443118978,-0.766044443118978,0.6427876096865394,27.19833556120345,-23.255818837342037" />
+          </GeometryDrawing.Brush>
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="2" RadiusY="3" Center="38.5353,17.5356" Transform="0.6427876096865394,0.766044443118978,-0.766044443118978,0.6427876096865394,27.19833556120345,-23.255818837342037" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

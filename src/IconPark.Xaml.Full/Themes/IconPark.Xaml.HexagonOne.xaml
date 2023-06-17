@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.HexagonOne" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M24,4.287915229797363C24.334625244140625,4.287915229797363,24.66925048828125,4.371809959411621,24.97130012512207,4.539599895477295L40.97129821777344,13.428500175476074C41.606201171875,13.781200408935547,42,14.450499534606934,42,15.176799774169922L42,32.82320022583008C42,33.54949951171875,41.606201171875,34.21879959106445,40.97129821777344,34.57149887084961L24.97130012512207,43.46039962768555C24.36720085144043,43.79600143432617,23.63279914855957,43.79600143432617,23.02869987487793,43.46039962768555L7.028709888458252,34.57149887084961C6.39378023147583,34.21879959106445,6,33.54949951171875,6,32.82320022583008L6,15.176799774169922C6,14.450499534606934,6.39378023147583,13.781200408935547,7.028719902038574,13.428500175476074L23.02869987487793,4.539599895477295C23.33074951171875,4.371809959411621,23.665374755859375,4.287915229797363,24,4.287915229797363z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

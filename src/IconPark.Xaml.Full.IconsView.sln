@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconPark.Xaml.Full", "IconPark.Xaml.Full\IconPark.Xaml.Full.csproj", "{A1665F2F-7241-4332-85AC-ADD3DC699D41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconPark.Xaml.Full.IconsView", "IconPark.Xaml.Full.IconsView\IconPark.Xaml.Full.IconsView.csproj", "{4876BE84-B105-49E3-9C80-B6D2794B95F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1665F2F-7241-4332-85AC-ADD3DC699D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1665F2F-7241-4332-85AC-ADD3DC699D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1665F2F-7241-4332-85AC-ADD3DC699D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1665F2F-7241-4332-85AC-ADD3DC699D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4876BE84-B105-49E3-9C80-B6D2794B95F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4876BE84-B105-49E3-9C80-B6D2794B95F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4876BE84-B105-49E3-9C80-B6D2794B95F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4876BE84-B105-49E3-9C80-B6D2794B95F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {067036B7-190F-4B88-BE71-517A87222E55}
+	EndGlobalSection
+EndGlobal

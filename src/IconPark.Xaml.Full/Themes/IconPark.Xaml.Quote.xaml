@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Quote" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M18.8533,9.11587C11.3227,13.9521 7.13913,19.5811 6.30256,26.0028 5.00021,35.9999 13.9404,40.8932 18.4703,36.4966 23.0002,32.1 20.2848,26.5195 17.0047,24.9941 13.7246,23.4686 11.7187,23.9999 12.0686,21.9614 12.4185,19.923 17.0851,14.2712 21.1849,11.6391 21.4569,11.4078 21.5604,10.959 21.2985,10.6185 21.1262,10.3946 20.7883,9.95545 20.2848,9.30102 19.8445,8.72875 19.4227,8.75017 18.8533,9.11587z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M38.6789,9.11587C31.1484,13.9521 26.9648,19.5811 26.1282,26.0028 24.8259,35.9999 33.7661,40.8932 38.296,36.4966 42.8259,32.1 40.1105,26.5195 36.8304,24.9941 33.5503,23.4686 31.5443,23.9999 31.8943,21.9614 32.2442,19.923 36.9108,14.2712 41.0106,11.6391 41.2826,11.4078 41.3861,10.959 41.1241,10.6185 40.9519,10.3946 40.614,9.95545 40.1105,9.30102 39.6702,8.72875 39.2484,8.75017 38.6789,9.11587z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

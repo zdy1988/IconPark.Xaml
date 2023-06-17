@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.SuccessPicture" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M44,22C44,20.8954 43.1046,20 42,20 40.8954,20 40,20.8954 40,22L44,22z M24,8C25.1046,8 26,7.10457 26,6 26,4.89543 25.1046,4 24,4L24,8z M39,40L9,40 9,44 39,44 39,40z M8,39L8,9 4,9 4,39 8,39z M40,22L40,39 44,39 44,22 40,22z M9,8L24,8 24,4 9,4 9,8z M9,40C8.44772,40,8,39.5523,8,39L4,39C4,41.7614,6.23857,44,9,44L9,40z M39,44C41.7614,44,44,41.7614,44,39L40,39C40,39.5523,39.5523,40,39,40L39,44z M8,9C8,8.44772,8.44771,8,9,8L9,4C6.23858,4,4,6.23857,4,9L8,9z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M6,35L16.6931,25.198C17.4389,24.5143,18.5779,24.4953,19.3461,25.1538L32,36" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{x:Null}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M28,31L32.7735,26.2265C33.4772,25.5228,34.5914,25.4436,35.3877,26.0408L42,31" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M31.4142,9.58579C30.6332,8.80474 29.3668,8.80474 28.5858,9.58579 27.8047,10.3668 27.8047,11.6332 28.5858,12.4142L31.4142,9.58579z M34,15L32.5858,16.4142C33.3668,17.1953,34.6332,17.1953,35.4142,16.4142L34,15z M43.4142,8.41421C44.1953,7.63317 44.1953,6.36683 43.4142,5.58579 42.6332,4.80474 41.3668,4.80474 40.5858,5.58579L43.4142,8.41421z M28.5858,12.4142L32.5858,16.4142 35.4142,13.5858 31.4142,9.58579 28.5858,12.4142z M35.4142,16.4142L43.4142,8.41421 40.5858,5.58579 32.5858,13.5858 35.4142,16.4142z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

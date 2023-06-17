@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Lark" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M41.0716,5.99409L3.31071,16.5187 12.3856,25.8126 20.7998,25.9594 30.4827,16.5187C30.2266,15.9943 30.0985,15.5552 30.0985,15.2013 30.0985,14.4074 30.4104,13.7786 30.8947,13.333 31.7241,12.57 32.7222,12.4558 33.8889,12.9905L41.0716,5.99409z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M42.1021,6.72842L31.5775,44.4893 22.2836,35.4144 22.1367,27.0002 31.5115,17.4816C32.0195,17.8454 32.5743,18.0105 33.1759,17.9769 34.0784,17.9264 34.6614,17.3813 34.9349,17.0602 35.2083,16.7392 35.5293,16.2051 35.5025,15.4113 35.4847,14.8821 35.3109,14.3941 34.9812,13.9472L42.1021,6.72842z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

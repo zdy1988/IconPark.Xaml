@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Facebook" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M27.098899841308594,5L36,5 36,12.599699974060059 31.248899459838867,12.599699974060059 29.98710060119629,12.599699974060059C28.90089988708496,12.599699974060059,28.020299911499023,13.480299949645996,28.020299911499023,14.56659984588623L28.020299911499023,21.46739959716797 36,21.46739959716797 34.831298828125,29.064300537109375 28.020299911499023,29.064300537109375 28.020299911499023,43 19.245100021362305,43 19.245100021362305,29.064300537109375 12,29.064300537109375 12,21.46739959716797 19.151500701904297,21.46739959716797 19.245100021362305,14.25629997253418 19.231800079345703,12.947099685668945C19.18790054321289,8.602179527282715 22.67449951171875,5.044340133666992 27.019399642944336,5.000400066375732 27.045900344848633,5.0001301765441895 27.072399139404297,5 27.098899841308594,5z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

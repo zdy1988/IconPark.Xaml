@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Huoshanzhibo" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M35.3926,16.0397C32.1091,15.3432,29.8205,12.4576,29.7707,9.12427L24.6961,9.12427 24.6961,29.572C24.5966,31.9103 22.6563,33.7511 20.318,33.7014 17.9797,33.6516 16.1389,31.7113 16.1389,29.373 16.1887,27.0347 18.0792,25.1442 20.4175,25.1442 20.8653,25.1442 21.2633,25.1939 21.6613,25.3432L21.6613,20.1193C21.2633,20.0695,20.8155,20.0695,20.4175,20.0695L20.2185,20.0695C15.0444,20.2188 10.9648,24.4477 11.0643,29.6218 11.1638,34.7959 15.3926,38.8755 20.5668,38.8258 25.7409,38.776 29.8703,34.5472 29.8703,29.4228L29.8703,19.0248C31.9598,20.5173,34.3976,21.3133,36.9847,21.3133L36.9847,16.1889C36.3877,16.1889,35.8902,16.1392,35.3926,16.0397z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M33.9502,44L14.0498,44C8.47761,44,4,39.4726,4,33.9502L4,14.0498C4,8.47761,8.47761,4,14.0498,4L33.9502,4C39.4726,4,44,8.47761,44,14.0498L44,33.9502C44,39.4726,39.4726,44,33.9502,44z M14.0995,4.44776C8.77612,4.44776,4.44776,8.77612,4.44776,14.0995L4.44776,33.8507C4.44776,39.1741,8.77612,43.5025,14.0995,43.5025L33.8507,43.5025C39.1741,43.5025,43.5025,39.1741,43.5025,33.8507L43.5025,14.0995C43.5025,8.77612,39.1741,4.44776,33.8507,4.44776L14.0995,4.44776z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M36.1387,35.7412C36.1387,35.6417 36.1387,35.4427 36.1387,35.2934 36.1387,35.2437 36.1884,35.2437 36.1884,35.2437 36.2382,35.2437 36.7854,35.7412 36.7854,35.7412" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M20.4197,33.204C22.4595,33.204,24.1013,31.6119,24.2008,29.5721L24.2008,27.9801C23.2555,27.5821 22.3103,27.2338 21.3152,26.9851 21.2157,26.9353 21.1162,26.9353 21.0167,26.9353 21.0167,27.0348 21.0167,27.1343 21.0167,27.2338 21.0167,29.4726 20.37,31.3134 19.3252,33.005 19.6237,33.1045 19.972,33.1542 20.3202,33.1542 20.3202,33.204 20.37,33.204 20.4197,33.204z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M36.5384,35.5421C36.4886,35.4924 36.3393,35.4426 36.2896,35.4924 36.1901,35.5421 36.1403,35.5919 36.1403,35.6914 36.0906,37.2834 35.6926,38.8257 35.0956,40.2188 35.1453,40.0695 34.8468,39.4725 34.7971,39.3232 34.6976,39.0247 34.5981,38.7262 34.4488,38.4277 34.2,37.8307 33.9513,37.2834 33.6528,36.6864 33.0558,35.5919 32.3592,34.4974 31.613,33.5521 31.1155,32.9053 30.5682,32.3581 29.9712,31.8108 28.8767,36.0396 25.0956,39.2237 20.5185,39.2735L20.4189,39.2735C18.4289,39.2735 16.5881,38.6765 15.0458,37.6814 14.6976,37.9799 14.2995,38.2785 13.9513,38.577 13.1055,37.6814 12.409,36.6864 11.812,35.5919 11.7622,35.4924 11.7125,35.3929 11.7125,35.2934 11.613,35.3929 11.5135,35.4426 11.414,35.5421 9.62293,37.1342 8.08064,38.9252 6.78711,40.8158 6.88661,40.9153 7.03587,41.0645 7.13537,41.164 7.18512,41.1143 7.23487,41.0148 7.28462,40.965L8.5284,42.0595 9.32442,42.4078C9.22492,42.4576 9.17517,42.5571 9.07567,42.6068 9.22492,42.7063 9.37417,42.7561 9.52343,42.8556 9.62293,42.7561 9.72243,42.7063 9.82193,42.6068L11.6627,43.4526 16.1901,43.7511 31.1652,43.7511C31.1652,43.8008,31.1652,43.8506,31.1155,43.9003L33.1553,43.9003C33.205,43.8506 33.2548,43.8008 33.3045,43.7511 33.3045,43.7013 33.3543,43.7013 33.3543,43.6516L36.0906,43.4028 38.8269,42.2586 40.6677,40.8655C40.7175,40.965 40.7672,41.0148 40.817,41.1143 40.9165,41.0148 41.0657,40.8655 41.1652,40.766 39.8717,38.9252 38.3294,37.1342 36.5384,35.5421z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M20.518,38.7762C24.9458,38.7265 28.6772,35.5921 29.5727,31.413 28.4284,30.418 27.1847,29.5225 25.8414,28.7762 25.4434,28.5772 25.0453,28.3782 24.6473,28.1792L24.6473,29.5225C24.5478,31.811 22.6573,33.6518 20.3687,33.6518 20.319,33.6518 20.319,33.6518 20.2692,33.6518 19.8215,33.6518 19.4235,33.5523 19.0254,33.4031 18.0802,34.7961 16.8364,36.0896 15.4434,37.2837 16.8861,38.1792 18.5777,38.7265 20.4185,38.7265 20.4185,38.7762 20.4682,38.7762 20.518,38.7762z M18.3289,35.1941C18.2792,35.1941,18.3289,35.1941,18.3289,35.1941L18.3289,35.1941z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

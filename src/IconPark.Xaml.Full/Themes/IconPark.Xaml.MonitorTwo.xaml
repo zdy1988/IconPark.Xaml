@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.MonitorTwo" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{x:Null}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M32.60628890991211,20.580411911010742L35,24 44,24C44,35.04570007324219 35.04570007324219,44 24,44 18.549100875854492,44 13.607500076293945,41.819400787353516 10,38.282901763916016 8.179759979248047,36.49850082397461 6.699170112609863,34.36880111694336 5.664169788360596,32L16.207077026367188,27.531322479248047 19,32 22.58626937866211,24.82746124267578 32.60628890991211,20.580411911010742z M24,4C29.707199096679688,4 34.85609817504883,6.390550136566162 38.5,10.225000381469727 40.187400817871094,12.00059986114502 41.552101135253906,14.08590030670166 42.5,16.386899948120117L32.60628890991211,20.580411911010742 28,14 22.58626937866211,24.82746124267578 16.207077026367188,27.531322479248047 14,24 4,24C4,12.954299926757812,12.954299926757812,4,24,4z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

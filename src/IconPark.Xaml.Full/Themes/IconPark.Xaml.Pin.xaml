@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Pin" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M31.89889907836914,4.786829948425293L43.21260070800781,16.100500106811523 38.26559829711914,15.390700340270996 31.19179916381836,28.121400833129883C32.97520065307617,31.758899688720703 33.13370132446289,34.66469955444336 30.49530029296875,37.303199768066406 30.49530029296875,37.303199768066406 26.235000610351562,33.04290008544922 22.717100143432617,29.524999618530273L6.443049907684326,41.556400299072266 18.438199996948242,25.2460994720459C14.92020034790039,21.728099822998047 10.69629955291748,17.504199981689453 10.69629955291748,17.504199981689453 13.334699630737305,14.865699768066406 16.47010040283203,14.938699722290039 19.87809944152832,16.807600021362305L32.619998931884766,9.745089530944824 31.89889907836914,4.786829948425293z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.QingniaoClue" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M1.3868,27.2805C3.34912,36.6795,12.5111,42.7522,21.946,40.9791L21.9401,40.9844C32.9323,39.189 38.0795,32.5472 42.2634,29.223 44.4878,27.4558 45.6531,26.4229 46.7932,25.8274 46.7932,25.827 46.7932,25.827 46.7932,25.827 46.0465,25.9532 45.5667,25.7259 44.9223,25.4991 44.2111,25.2482 43.2991,24.9973 41.6082,25.2213 38.3851,25.6489 35.5648,28.8707 35.5648,28.8707L33.8457,30.3991C31.7855,31.9941 29.3381,33.1577 26.6108,33.7223 23.4776,34.3705 20.3656,34.1488 17.5286,33.2226 16.379,32.8472 15.2753,32.3552 14.2326,31.7593 10.0059,29.3443 6.79633,25.2102 5.72648,20.0864 5.09572,17.0668 5.2853,14.067 6.14222,11.3161 2.11374,15.3648 0.134343,21.2831 1.3868,27.2805z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M21.946,40.9791L21.9401,40.9844C32.9323,39.189 38.0795,32.5472 42.2634,29.223 44.4878,27.4558 45.6531,26.4229 46.7932,25.8274 46.0465,25.9532 45.5667,25.7259 44.9223,25.4991 44.2111,25.2482 43.2991,24.9973 41.6082,25.2213 38.3851,25.6489 35.5648,28.8707 35.5648,28.8707L33.8457,30.3991C31.7855,31.9941 29.3381,33.1577 26.6108,33.7223 23.4776,34.3705 20.3656,34.1488 17.5286,33.2226 16.379,32.8472 15.2753,32.3552 14.2326,31.7593 10.0059,29.3443 6.79633,25.2102 5.72648,20.0864 5.09572,17.0668 5.2853,14.067 6.14222,11.3161 2.11374,15.3648 0.134343,21.2831 1.3868,27.2805 3.34912,36.6795 12.5111,42.7522 21.946,40.9791z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M35.7492,28.5858C33.0746,37.9318 23.2968,43.3504 13.909,40.6876 5.72378,38.3667 0.537976,30.6679 1.11611,22.5385 1.79601,28.982 6.31272,34.6759 12.9545,36.5594 21.6771,39.034 30.7624,33.9991 33.2475,25.3145 33.9657,22.804 34.0536,20.2633 33.605,17.8599 33.0559,14.9188 31.7032,12.1833 29.7184,9.96063 32.2862,11.984 34.2232,14.6734 35.3407,17.6914 36.5914,21.0691 36.8157,24.8582 35.7492,28.5858z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M27.459,32.4682L27.9865,33.3868 28.8426,33.0344 29.6327,32.6819C31.2256,31.8874 31.1506,32.0076 33.067,30.7387 34.9835,29.4698 35.995,28.6987 37.4679,26.9245L36.6486,26.2751C35.6802,27.497 34.6114,28.4134 32.7796,29.6262 31.6248,30.3908 29.8493,31.3398 27.459,32.4682z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <StreamGeometry>M18.6964,6.11786C21.0455,6.11786 23.3256,6.58727 25.4235,7.45256 16.7525,9.89997 11.2736,18.5288 12.8714,27.4427 12.8725,27.4469 12.8732,27.4518 12.8735,27.4559 12.8979,27.5905 12.9237,27.725 12.9512,27.8591 12.953,27.8682 12.9547,27.8776 12.9568,27.8863 12.9607,27.9048 12.9638,27.9233 12.9676,27.9417 12.9917,28.0567 13.0175,28.1707 13.0436,28.2843 13.0488,28.3062 13.054,28.3278 13.0593,28.3501 13.0701,28.3972 13.0809,28.4442 13.0945,28.4944 13.2718,29.2221 13.4946,29.9319 13.7601,30.6208 10.8096,28.5198 8.88151,25.9539 7.64028,23.2814 5.98995,19.7281 5.75035,15.6338 7.03271,10.4819 9.25047,8.54114 11.9865,7.12893 15.0822,6.4883 15.3262,6.43742 15.5701,6.39351 15.814,6.35378 16.7811,6.19487 17.7443,6.11786 18.6964,6.11786z M5.38555,17.417L5.40021,17.7679C5.32054,16.681 5.34377,15.6045 5.46259,14.5493 5.3808,15.5333 5.3542,16.49 5.38555,17.417z</StreamGeometry>
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

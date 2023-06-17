@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Hi" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+      <GeometryDrawing.Pen>
+        <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" EndLineCap="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineCap}" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" MiterLimit="1" />
+      </GeometryDrawing.Pen>
+      <GeometryDrawing.Geometry>
+        <PathGeometry FillRule="Nonzero" Figures="M20.854700088500977,5.621419429779053L37.521400451660156,8.562589645385742C38.954898834228516,8.815580368041992,40,10.061200141906738,40,11.516900062561035L40,17.814800262451172 40,40C40,41.656898498535156,38.656898498535156,43,37,43L17.47599983215332,43C17.387300491333008,43,17.304899215698242,42.9541015625,17.258100509643555,42.87879943847656L7.860109806060791,27.7273006439209C6.791150093078613,26.0039005279541 7.144750118255615,23.757699966430664 8.691479682922363,22.445999145507812 10.630599975585938,20.801599502563477 13.583999633789062,21.303600311279297 14.871000289916992,23.496299743652344L17.33329963684082,27.6914005279541 17.33329963684082,8.575770378112793C17.33329963684082,6.710370063781738,19.0177001953125,5.297239780426025,20.854700088500977,5.621419429779053z" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

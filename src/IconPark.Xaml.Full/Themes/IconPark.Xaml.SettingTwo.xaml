@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.SettingTwo" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M18.2838,43.1713C14.9327,42.1736 11.9498,40.3213 9.58787,37.867 10.469,36.8227 11,35.4734 11,34.0001 11,30.6864 8.31371,28.0001 5,28.0001 4.79955,28.0001 4.60139,28.01 4.40599,28.0292 4.13979,26.7277 4,25.3803 4,24.0001 4,21.9095 4.32077,19.8938 4.91579,17.9995 4.94381,17.9999 4.97188,18.0001 5,18.0001 8.31371,18.0001 11,15.3138 11,12.0001 11,11.0488 10.7786,10.1493 10.3846,9.35011 12.6975,7.1995 15.5205,5.59002 18.6521,4.72314 19.6444,6.66819 21.6667,8.00013 24,8.00013 26.3333,8.00013 28.3556,6.66819 29.3479,4.72314 32.4795,5.59002 35.3025,7.1995 37.6154,9.35011 37.2214,10.1493 37,11.0488 37,12.0001 37,15.3138 39.6863,18.0001 43,18.0001 43.0281,18.0001 43.0562,17.9999 43.0842,17.9995 43.6792,19.8938 44,21.9095 44,24.0001 44,25.3803 43.8602,26.7277 43.594,28.0292 43.3986,28.01 43.2005,28.0001 43,28.0001 39.6863,28.0001 37,30.6864 37,34.0001 37,35.4734 37.531,36.8227 38.4121,37.867 36.0502,40.3213 33.0673,42.1736 29.7162,43.1713 28.9428,40.752 26.676,39.0001 24,39.0001 21.324,39.0001 19.0572,40.752 18.2838,43.1713z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.InnerStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M24,31C27.866,31 31,27.866 31,24 31,20.134 27.866,17 24,17 20.134,17 17,20.134 17,24 17,27.866 20.134,31 24,31z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>

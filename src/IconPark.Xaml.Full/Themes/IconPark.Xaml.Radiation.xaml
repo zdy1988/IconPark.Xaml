@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IconPark.Xaml.Full">
+<ControlTemplate x:Key="IconPark.Xaml.Radiation" TargetType="{x:Type local:Icon}">
+<Border>
+<Image Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+<Image.Source>
+<DrawingImage>
+  <DrawingImage.Drawing>
+    <DrawingGroup>
+      <DrawingGroup.Children>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}">
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M24.0039,27C25.6608,27 27.0039,25.6569 27.0039,24 27.0039,22.3431 25.6608,21 24.0039,21 22.3471,21 21.0039,22.3431 21.0039,24 21.0039,25.6569 22.3471,27 24.0039,27z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterFillColorBrush}">
+          <GeometryDrawing.Pen>
+            <Pen Brush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ColorLayer.OuterStrokeColorBrush}" Thickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeThickness}" StartLineCap="Flat" EndLineCap="Flat" LineJoin="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=StrokeLineJoin}" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <PathGeometry FillRule="Nonzero" Figures="M19.0405,31.476C20.4626,32.4194 22.1673,32.9688 24,32.9688 25.8327,32.9688 27.5374,32.4194 28.9595,31.476L35.021,40.6827C31.861,42.7792 28.0727,44 24,44 19.9273,44 16.139,42.7792 12.979,40.6827L19.0405,31.476z M15.0159,24.484L4.03531,25.145C4.01188,24.7474 4,24.3467 4,23.9432 4,16.0911 8.49944,9.29287 15.0538,6L19.9742,15.8688C17.0247,17.3506 15,20.4098 15,23.9432 15,24.1248 15.0053,24.3051 15.0159,24.484z M28.0258,15.8688L32.9462,6C39.5006,9.29287 44,16.0911 44,23.9432 44,24.3467 43.9881,24.7474 43.9647,25.145L32.9841,24.484C32.9947,24.3051 33,24.1248 33,23.9432 33,20.4098 30.9753,17.3506 28.0258,15.8688z" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup.Children>
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry Rect="0,0,48,48" />
+      </DrawingGroup.ClipGeometry>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage></Image.Source>
+</Image>
+</Border>
+</ControlTemplate>
+</ResourceDictionary>
