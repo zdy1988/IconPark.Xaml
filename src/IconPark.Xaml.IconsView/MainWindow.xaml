@@ -79,7 +79,7 @@
                                         </StackPanel.Resources>
                                         <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
-                                        <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
+                                        <ZDY:Button Content="复制XMAL With Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL Source Code" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLSourceCodeCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Separator/>
                                         <ZDY:Button Content="复制SVG" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopySVGCommand}" CommandParameter="{Binding }"/>
@@ -166,7 +166,7 @@
                                     </StackPanel.Resources>
                                     <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
-                                    <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
+                                    <ZDY:Button Content="复制XMAL With Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL Source Code" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLSourceCodeCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Separator/>
                                     <ZDY:Button Content="复制SVG" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopySVGCommand}" CommandParameter="{Binding }"/>
