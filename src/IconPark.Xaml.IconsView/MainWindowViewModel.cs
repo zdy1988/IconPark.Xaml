@@ -156,6 +156,26 @@ namespace IconPark.Xaml.IconsView
 
         })).Value;
 
+        public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopyXAMLSourceCodeCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
+        {
+            var data = Icon.GetData(item.Key);
+
+            var opts = Options.Resolve(this, true);
+
+            Clipboard.SetText(@$"<Viewbox FlowDirection=""LeftToRight"" Width=""{opts.Size}"" Height=""{opts.Size}"">
+                                    <Path Data=""{data}""
+                                          Stroke=""{opts.Color}"" 
+                                          StrokeThickness=""{opts.StrokeWidth}""
+                                          StrokeLineJoin=""{opts.StrokeLineJoin}""
+                                          StrokeStartLineCap=""{opts.StrokeLineCap}""
+                                          StrokeEndLineCap=""{opts.StrokeLineCap}""
+                                          VerticalAlignment=""Center""
+                                          HorizontalAlignment=""Center""
+                                          Stretch=""Uniform""/>
+                                </Viewbox>");
+
+        })).Value;
+
         public RelayCommand<KeyValuePair<IconKind, EnumSourceItem>> ExecuteCopySVGCommand => new Lazy<RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>>(() => new RelayCommand<KeyValuePair<IconKind, EnumSourceItem>>(item =>
         {
             var data = Icon.GetData(item.Key);

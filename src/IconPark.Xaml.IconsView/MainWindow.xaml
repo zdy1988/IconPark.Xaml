@@ -80,6 +80,7 @@
                                         <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
+                                        <ZDY:Button Content="复制XMAL Source Code" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLSourceCodeCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Separator/>
                                         <ZDY:Button Content="复制SVG" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopySVGCommand}" CommandParameter="{Binding }"/>
                                         <ZDY:Button Content="复制React代码" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyReactCommand}" CommandParameter="{Binding }"/>
@@ -97,7 +98,24 @@
             </Border>
             <DataTemplate.Triggers>
                 <Trigger SourceName="MoreButtonContainer" Property="IsMouseOver" Value="True">
-                    <Setter TargetName="PART_Popup" Property="IsOpen" Value="True"/>
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen" BeginTime="0:0:0.25">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
+                                </BooleanAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen" BeginTime="0:0:0.25">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
                     <Setter TargetName="PART_Popup" Property="Visibility" Value="Visible"/>
                 </Trigger>
             </DataTemplate.Triggers>
@@ -124,7 +142,7 @@
                     </Border>
                     <Popup x:Name="PART_Popup" StaysOpen="True"
                            AllowsTransparency="True" 
-                           Focusable="False" VerticalOffset="6"
+                           Focusable="False"
                            PopupAnimation="Fade" Visibility="Collapsed"
                            Placement="Bottom">
                         <Popup.HorizontalOffset>
@@ -149,6 +167,7 @@
                                     <ZDY:Button Content="复制Kind" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyKindCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制XMAL Width Options" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLWithOptionsCommand}" CommandParameter="{Binding }"/>
+                                    <ZDY:Button Content="复制XMAL Source Code" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyXAMLSourceCodeCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Separator/>
                                     <ZDY:Button Content="复制SVG" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopySVGCommand}" CommandParameter="{Binding }"/>
                                     <ZDY:Button Content="复制React代码" Command="{Binding RelativeSource={RelativeSource AncestorType=ZDY:ListBox}, Path=DataContext.ExecuteCopyReactCommand}" CommandParameter="{Binding }"/>
@@ -161,7 +180,24 @@
             </Border>
             <DataTemplate.Triggers>
                 <Trigger SourceName="MoreButtonContainer" Property="IsMouseOver" Value="True">
-                    <Setter TargetName="PART_Popup" Property="IsOpen" Value="True"/>
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen" BeginTime="0:0:0.25">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
+                                </BooleanAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen" BeginTime="0:0:0.25">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
                     <Setter TargetName="PART_Popup" Property="Visibility" Value="Visible"/>
                 </Trigger>
             </DataTemplate.Triggers>
